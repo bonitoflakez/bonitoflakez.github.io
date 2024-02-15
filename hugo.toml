@@ -20,6 +20,7 @@ tags = [
   "web",
   "cli",
   "ricing",
+  "c",
 ]
 
 # Setup syntax highlighting without inline styles.
