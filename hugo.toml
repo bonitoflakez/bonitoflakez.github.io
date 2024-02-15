@@ -1,0 +1,57 @@
+# Basic config
+baseURL = "https://bonitoflakez.github.io/"
+theme = "hugo-bearcub"
+copyright = "© 2024 Nikhil"
+defaultContentLanguage = "en"
+
+# Generate a nice robots.txt for SEO
+enableRobotsTXT = true
+
+# Tags
+tags = [
+  "blog",
+  "rant",
+  "programming",
+  "random",
+  "writeup",
+  "linux",
+  "windows",
+  "framework",
+  "web",
+  "cli",
+  "ricing",
+]
+
+# Setup syntax highlighting without inline styles.
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/style-src#unsafe_inline_styles
+[markup]
+[markup.highlight]
+lineNos = true
+lineNumbersInTable = false
+# allows Bear Cub (theme) to use a variation of Dracula that is more accessible
+# to people with poor eyesight
+# https://web.dev/color-and-contrast-accessibility/
+noClasses = false
+
+
+[languages]
+[languages.en]
+title = "Nikhil's Website"
+languageName = "en-US"
+LanguageCode = "en-US"
+contentDir = "content"
+[languages.en.params]
+madeWith = "Made with [Hugo](https://gohugo.io/) and [Bear Cub](https://github.com/clente/hugo-bearcub)"
+
+[params]
+description = "Personal blog site"
+
+favicon = "images/favicon.png"
+images = ["images/share.webp"]
+dateFormat = "2006-01-02"
+hideUntranslated = false
+generateSocialCard = true
+
+
+[outputs]
+  home = ["HTML", "JSON"]
