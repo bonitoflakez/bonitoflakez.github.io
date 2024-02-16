@@ -21,6 +21,7 @@ tags = [
   "cli",
   "ricing",
   "c",
+  "git"
 ]
 
 # Setup syntax highlighting without inline styles.
