@@ -1,11 +1,11 @@
 +++
 author = "Nikhil"
 title = "Writing Long Git Commits"
-date = "2024-02-17"
-description = "Tired of Git commit messages having a limit or writing multiple `-m` tags every time? Try this instead."
+date = "2024-02-16"
+description = "Tired of Git commit messages having a limit or writing multiple -m tags every time? Try this instead."
 tags = [
     "cli",
-    "git",
+    "git"
 ]
 +++
 
