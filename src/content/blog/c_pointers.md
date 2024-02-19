@@ -1,13 +1,8 @@
-+++
-author = "Nikhil"
-title = "Pointers in C"
-date = "2024-02-15"
-description = "An overview of pointers in C language. Notes turned to blog."
-tags = [
-    "programming",
-    "c",
-]
-+++
+---
+title: "Pointers in C"
+description: "Basic guide to pointers in C"
+pubDate: "Feb 15 2024"
+---
 
 **What is a Pointer?**
 
@@ -68,11 +63,11 @@ int main(int argc, char *argv[])
 In the above program, we have an integer `m` with a value of 5 and `n` with a value of 7. In C, each variable possesses a memory address. When we run this program, we get the following output:
 
 ```txt
-(value of m -> 5
+value of m -> 5
 address of m -> 0x7ffccce8edd0
 
 value of n -> 7
-address of n -> 0x7ffccce8edd4)
+address of n -> 0x7ffccce8edd4
 ```
 
 Variable `m` has the memory address `0x7ffccce8edd0`, and for `n`, it's `0x7ffccce8edd4`. An integer is 4 bytes in size, which is why we see a difference of 4 between both memory addresses.
@@ -88,12 +83,13 @@ After assigning values to pointers
 value of pointer m_addr 0x7ffccce8edd0
 value of pointer n_addr 0x7ffccce8edd4
 ```
+
 In the C program, we're first declaring the pointers and displaying their addresses. After assigning the address of variables `m` and `n` to them, we print the values. As you can see, before assigning the value, it had a different memory address, and after pointing it to the memory addresses of `m` and `n`, it now shows the addresses of `m` and `n`.
 
-> [!NOTE] Note
-> You should never initialize a pointer without assigning a value to it, as it is not a recommended way of using it. You should always initialize it by assigning a value directly, like `int *some_addr = some_var`. Pointers initialized without assigning a value are also called "Wild Pointers."
+> **NOTE:** You should never initialize a pointer without assigning a value to it, as it is not a recommended way of using it. You should always initialize it by assigning a value directly, like `int *some_addr = some_var`. Pointers initialized without assigning a value are also called "Wild Pointers."
 
-Let's take another example to see how a pointer functions with different things. 
+Let's take another example to see how a pointer functions with different things.
+
 ```c
 #include <stdio.h>
 
@@ -115,13 +111,16 @@ printf("Value of p[2]: %d\n", *p);
 return 0;
 }
 ```
+
 In this program, we have an array `numbers` containing five numbers from 1 to 5. We initialize a pointer and assign the address value of the first element of the array, then print it. After incrementing `p` and printing again, and repeating the process, the program produces the following output:
+
 ```txt
-➜  c ./a.out 
+➜  c ./a.out
 Value at p[0]: 1
 Value at p[1]: 2
 Value of p[2]: 3
 ```
+
 As you can see, as we initialize the pointer, it holds the data of the array element present at the first index, and as we increment `p`, it moves to the next indexes.
 
 We can also perform "pointer to pointer" initialization:
@@ -144,9 +143,11 @@ printf("Value at ptr2 (double pointer): %d\n", **p2);
 return 0;
 }
 ```
+
 So what's happening here, we have an `int` variable `n` with value 10. We then defined a pointer `p1` and assigned address of `n` to it. Then we defined another pointer (double pointer) `p2` and assigned address of `p1` (originally `n`). Which prints the below output
+
 ```txt
-➜  c ./a.out 
+➜  c ./a.out
 Value at var: 10
 Value at ptr1: 10
 Value at ptr2 (double pointer): 10

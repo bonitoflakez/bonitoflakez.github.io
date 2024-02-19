@@ -1,0 +1,182 @@
+:root {
+	--background: #111111;
+	--foreground: #eeeeee;
+	--border: #444444;
+	--card: #141414;
+
+	--accent: #DED0B6;
+	--accent-dark: #BBAB8C;
+	--accent-light: #FAEED1;
+	--link: #6D8EAF;
+	--code: #958970;
+
+	/* Secondary Theme */
+	/* --accent: #C6DCBA; */
+	/* --accent-dark: #BBC3A4; */
+	/* --accent-light: #D7E4C0; */
+	/* --link: #B3A398; */
+	/* --code: #7d885d; */
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	background: var(--background);
+	background-size: 100% 600px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	color: var(--foreground);
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+main {
+	width: 1024px;
+	max-width: calc(100% - 2em);
+	margin: auto;
+	padding: 4em 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 1rem 0;
+	color: var(--accent);
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+h4 {
+	font-size: 1.125rem;
+}
+
+h5 {
+	font-size: 1rem;
+}
+
+h6 {
+	font-size: 0.875rem;
+}
+
+textarea {
+	width: 100%;
+	font-size: 16px;
+}
+
+table {
+	width: 100%;
+	padding: 1rem;
+	border: 1px solid var(--border);
+}
+
+#blog ul {
+	list-style: disc !important;
+	margin-left: 1.25rem;
+}
+
+#blog ol {
+	list-style: decimal !important;
+	margin-left: 1.25rem;
+}
+
+#blog a {
+	color: var(--link);
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+#blog pre {
+	margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+	#blog pre {
+		margin: 1rem;
+	}
+}
+
+table,
+th,
+tbody,
+tr,
+td {
+	border: 1px solid var(--border);
+	padding: 1rem;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+code {
+	font-family: "JetBrains Mono", monospace;
+	font-optical-sizing: auto;
+	line-height: 1.5;
+	padding: 2px 5px;
+	background-color: var(--code);
+	border-radius: 0.175rem;
+}
+
+pre {
+	font-family: "JetBrains Mono", monospace;
+	font-optical-sizing: auto;
+	padding: 1.5em;
+	border-radius: 8px;
+}
+
+pre>code {
+	all: unset;
+}
+
+blockquote {
+	border-left: 4px solid var(--accent);
+	padding: 0 0 0 20px;
+	margin: 0px;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid var(--accent);
+}
+
+@media (max-width: 720px) {
+	main {
+		padding: 1em;
+	}
+}
+
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+	clip: rect(1px 1px 1px 1px);
+	/* maybe deprecated but we need to support legacy browsers */
+	clip: rect(1px, 1px, 1px, 1px);
+	/* modern browsers, clip-path works inwards from each corner */
+	clip-path: inset(50%);
+	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+	white-space: nowrap;
+}

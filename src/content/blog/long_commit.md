@@ -1,13 +1,8 @@
-+++
-author = "Nikhil"
-title = "Writing Long Git Commits"
-date = "2024-02-16"
-description = "Tired of Git commit messages having a limit or writing multiple -m tags every time? Try this instead."
-tags = [
-    "cli",
-    "git"
-]
-+++
+---
+title: "Writing Longer Git Commits"
+description: "Here's how you can write longer git commits easily"
+pubDate: "Feb 15 2024"
+---
 
 Writing concise commit messages is indeed a good practice, but there are times when I feel like I need a longer commit message for a particular commit. Here's what I do in such cases.
 

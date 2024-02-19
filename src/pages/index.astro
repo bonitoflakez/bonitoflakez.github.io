@@ -1,0 +1,51 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <h1 class="text-center text-2xl font-medium mb-12">
+        Welcome to {SITE_TITLE}!
+      </h1>
+      <h3 class="text-xl font-medium">Recent Posts</h3>
+      <ul class="decoration-none grid grid-cols-1 gap-4">
+        {
+          posts.slice(0, 4).map((post) => (
+            <li class="p-4 archive-post-card">
+              <a href={`/blog/${post.slug}/`}>
+                <h4 class="title text-lg md:text-xl">{post.data.title}</h4>
+                <p class="date text-xs my-1">
+                  <FormattedDate date={post.data.pubDate} />
+                </p>
+                <p class="text-sm line-clamp-3">{post.data.description}</p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+    <Footer />
+    <style>
+      .archive-post-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+      }
+    </style>
+  </body>
+</html>

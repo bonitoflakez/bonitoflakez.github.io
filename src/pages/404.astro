@@ -1,0 +1,29 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Page not found"
+      description="Umm... I guess the URL is wrong"
+    />
+  </head>
+  <body>
+    <Navbar />
+    <main class="flex flex-col items-center justify-center">
+      <h1 class="text-xl font-semibold">such empty... such sad...</h1>
+      <h1 class="text-xl font-semibold">(/ᐠ - ˕ -マ)</h1>
+    </main>
+    <Footer />
+    <style>
+      .archive-post-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+      }
+    </style>
+  </body>
+</html>
