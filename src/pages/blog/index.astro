@@ -21,18 +21,25 @@ const description = "Blog Posts";
   </head>
   <body>
     <Navbar />
-    <main>
+    <main class="w-full md:w-full lg:w-[80vw]">
       <section>
-        <ul class="decoration-none grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <h3 class="text-center text-2xl font-medium">Archives</h3>
+        <ul
+          class="decoration-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
           {
-            posts.slice(0, 4).map((post) => (
+            posts.map((post) => (
               <li class="p-4 archive-post-card">
                 <a href={`/blog/${post.slug}/`}>
-                  <h4 class="title text-lg md:text-xl">{post.data.title}</h4>
+                  <h4 class="title text-lg md:text-xl m-0 p-0">
+                    {post.data.title}
+                  </h4>
                   <p class="date text-xs my-1">
                     <FormattedDate date={post.data.pubDate} />
                   </p>
-                  <p class="text-sm line-clamp-2">{post.data.description}</p>
+                  <p class="text-sm line-clamp-2 pt-4">
+                    {post.data.description}
+                  </p>
                 </a>
               </li>
             ))
@@ -45,6 +52,10 @@ const description = "Blog Posts";
       .archive-post-card {
         background: var(--card);
         border: 1px solid var(--border);
+        transition: background 0.1s ease-in;
+      }
+      .archive-post-card:hover {
+        background-color: var(--card-hvr);
       }
     </style>
   </body>

@@ -1,0 +1,89 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import GithubLogo from "../components/GithubLogo.astro";
+import WebLogo from "../components/WebLogo.astro";
+import { projectsData } from "../utils/projectsData.js";
+
+const title = "Projects";
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+      title={title}
+      description="My projects and things I've coded for fun that are not really projects but are fun to put showcase"
+    />
+  </head>
+
+  <body>
+    <Navbar />
+    <main class="w-full md:w-full lg:w-[80vw]">
+      <div class="projects">
+        <h3 class="text-center text-2xl font-medium">Projects</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {
+            projectsData.map((project) => (
+              <a href={project.repo_link} target="_blank">
+                <li class="project">
+                  <div class="project-card p-4">
+                    <div class="project-info">
+                      <h3 class="m-0 p-0 font-medium">{project.title}</h3>
+                      <p class="text-sm line-clamp-2 m-0 p-0">{project.desc}</p>
+                    </div>
+                    {project.tags && (
+                      <div class="tags text-sm flex items-center gap-x-2">
+                        {project.tags.map((tag) => (
+                          <span class="tag">#{tag}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </li>
+              </a>
+            ))
+          }
+        </ul>
+      </div>
+    </main>
+    <Footer />
+    <style>
+      .project-card {
+        border: 1px solid var(--border);
+        background: var(--card);
+        transition: background 0.1s ease-in;
+      }
+
+      .project-card:hover {
+        background: var(--card-hvr);
+      }
+
+      .tags .tag {
+        border: 1px solid var(--border);
+        padding: 0.25em 0.5em;
+        background: var(--card-hvr);
+      }
+
+      p {
+        padding: 1rem 0rem;
+        line-height: 1.6;
+      }
+
+      .spec-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+      }
+
+      li {
+        font-size: 0.75rem;
+      }
+
+      @media (min-width: 768px) {
+        li {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </body>
+</html>

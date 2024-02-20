@@ -3,19 +3,13 @@
 	--foreground: #eeeeee;
 	--border: #444444;
 	--card: #141414;
+	--card-hvr: #212121;
 
 	--accent: #DED0B6;
 	--accent-dark: #BBAB8C;
 	--accent-light: #FAEED1;
 	--link: #6D8EAF;
 	--code: #958970;
-
-	/* Secondary Theme */
-	/* --accent: #C6DCBA; */
-	/* --accent-dark: #BBC3A4; */
-	/* --accent-light: #D7E4C0; */
-	/* --link: #B3A398; */
-	/* --code: #7d885d; */
 }
 
 body {
