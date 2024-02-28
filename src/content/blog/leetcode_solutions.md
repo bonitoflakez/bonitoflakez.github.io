@@ -7,7 +7,11 @@ pubDate: "Feb 28 2024"
 ### Table of Content
 
 - [Valid Parentheses](#valid-parentheses)
+  - [Approach](#approach)
+  - [Solution](#solution)
 - [Merge Two Lists](#merge-two-lists)
+  - [Approach](#approach-1)
+  - [Solution](#solution-1)
 
 ## Valid Parentheses
 
@@ -21,15 +25,13 @@ An input string is valid if:
 2. Open brackets must be closed in the correct order.
 3. Every close bracket has a corresponding open bracket of the same type.
 
----
-
-**Approach**
+### Approach
 
 - create a stack `storeParentheses` to store parentheses for comparison
 - store first parentheses in stack and compare the other one with the one present in stack
 - if they match then pop the character from stack else return false (meaning it doesn't have valid parentheses)
 
-**Solution**
+### Solution
 
 ```cpp
 bool isValid(string s)
@@ -75,7 +77,7 @@ Merge the two lists into one sorted list. The list should be made by splicing to
 
 Return the head of the merged linked list.
 
-**Approach**
+### Approach
 
 - if `list1` is empty return `list2`
 - if `list2` is empty return `list1`
@@ -89,7 +91,7 @@ Return the head of the merged linked list.
 > [!NOTE]
 > if we don't remove `head` of `mergedList` then the list starts from `0`.
 
-**Solution**
+### Solution
 
 ```cpp
 ListNode *mergeTwoLists(ListNode *list1, ListNode *list2)
