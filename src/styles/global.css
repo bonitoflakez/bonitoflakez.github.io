@@ -99,6 +99,10 @@ table {
 	margin: 1rem 0;
 }
 
+#blog p {
+	margin: 1rem 0;
+}
+
 @media (min-width: 768px) {
 	#blog pre {
 		margin: 1rem;
