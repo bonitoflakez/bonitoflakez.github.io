@@ -23,7 +23,7 @@ const description = "Blog Posts";
     <Navbar />
     <main class="w-full md:w-full lg:w-[80vw]">
       <section>
-        <h3 class="text-center text-2xl font-medium">Archives</h3>
+        <h3 class="text-xl font-medium">Archives</h3>
         <ul
           class="decoration-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
         >
@@ -31,13 +31,13 @@ const description = "Blog Posts";
             posts.map((post) => (
               <li class="p-4 archive-post-card">
                 <a href={`/blog/${post.slug}/`}>
-                  <h4 class="title text-lg md:text-xl m-0 p-0">
+                  <h4 class="title text-base md:text-lg m-0 p-0">
                     {post.data.title}
                   </h4>
-                  <p class="date text-xs my-1">
+                  <p class="date text-xs md:text-sm my-1">
                     <FormattedDate date={post.data.pubDate} />
                   </p>
-                  <p class="text-sm line-clamp-2 pt-4">
+                  <p class="text-xs md:text-sm line-clamp-2 pt-4">
                     {post.data.description}
                   </p>
                 </a>
