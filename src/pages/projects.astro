@@ -19,10 +19,10 @@ const title = "Projects";
 
   <body>
     <Navbar />
-    <main class="w-full md:w-full lg:w-[80vw]">
+    <main>
       <div class="projects">
-        <h3 class="text-xl font-medium">Projects</h3>
-        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <h3 class="text-xl font-medium my-2 underline underline-offset-4">Projects</h3>
+        <ul class="decoration-none grid grid-cols-1 gap-4">
           {
             projectsData.map((project) => (
               <a href={project.repo_link} target="_blank">
@@ -50,7 +50,7 @@ const title = "Projects";
     <Footer />
     <style>
       .project-card {
-        border: 1px solid var(--border);
+        border-left: 1px solid var(--border);
         background: var(--card);
         transition: background 0.1s ease-in;
       }

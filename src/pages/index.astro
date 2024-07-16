@@ -20,13 +20,15 @@ const posts = (await getCollection("blog")).sort(
   <body>
     <Navbar />
     <main>
-      <h3 class="text-xl font-medium">About Me</h3>
+      <h3 class="text-xl font-medium my-2 underline underline-offset-4">
+        About Me
+      </h3>
       <div class="about text-sm flex flex-col gap-y-4">
         <p>
-          I’m Nikhil, a Full-Stack Developer. I’m not picky about
-          what I work with; I dive into anything that gets the job done. I love
-          crafting automation scripts and websites that make life easier,
-          whether it’s through my trusty terminal or just a couple of clicks.
+          I’m Nikhil, a Full-Stack Developer. I’m not picky about what I work
+          with; I dive into anything that gets the job done. I love crafting
+          automation scripts and websites that make life easier, whether it’s
+          through my trusty terminal or just a couple of clicks.
         </p>
         <p>
           I often spend my time working on personal projects, or trying out new
@@ -39,20 +41,27 @@ const posts = (await getCollection("blog")).sort(
           time.
         </p>
       </div>
-      <h3 class="text-xl font-medium">Recent Posts</h3>
+      <h3 class="text-xl font-medium my-2 underline underline-offset-4">
+        Recent Posts
+      </h3>
       <ul class="decoration-none grid grid-cols-1 gap-4">
         {
           posts
             .slice(-3)
             .reverse()
             .map((post) => (
-              <li class="p-4 archive-post-card">
+              <li class="p-2 archive-post-card">
                 <a href={`/blog/${post.slug}/`}>
-                  <h4 class="title text-base md:text-lg">{post.data.title}</h4>
-                  <p class="date text-xs md:text-sm my-1">
-                    <FormattedDate date={post.data.pubDate} />
+                  <h4 class="title text-base md:text-lg">
+                    {" "}
+                    <span class="hidden md:inline-block">
+                      [<FormattedDate date={post.data.pubDate} />]
+                    </span>{" "}
+                    {post.data.title}
+                  </h4>
+                  <p class="mt-1 block md:hidden text-xs md:text-sm line-clamp-3">
+                    [<FormattedDate date={post.data.pubDate} />]
                   </p>
-                  <p class="text-xs md:text-sm line-clamp-3">{post.data.description}</p>
                 </a>
               </li>
             ))
@@ -63,7 +72,7 @@ const posts = (await getCollection("blog")).sort(
     <style>
       .archive-post-card {
         background: var(--card);
-        border: 1px solid var(--border);
+        border-left: 1px solid var(--border);
       }
       .archive-post-card:hover {
         background-color: var(--card-hvr);
